@@ -1,0 +1,57 @@
+body {
+	background-color: #f1f1f1 !important;
+}
+
+.navbar {
+	min-height: 40px;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.075);
+}
+
+.badge {
+	background-color: rgb(178, 24, 43) !important;
+}
+
+.littleFeller {
+	margin-top: 100px;
+}
+
+/*.charter {
+	background-color: white;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.075);
+}*/
+
+.nationalTable {
+	background-color: white;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.075);
+}
+
+.btn-default:hover,
+.btn-default:focus,
+.open > .dropdown-toggle.btn-default {
+	background-color: white !important;
+}
+
+.btn-group.open .dropdown-toggle {
+	-webkit-box-shadow: inset 0 3px 5px rgba(0,0,0,0) !important;
+	box-shadow: inset 0 3px 5px rgba(0,0,0,0) !important;
+}
+
+.btn {
+	padding: auto;
+	border: auto;
+}
+
+th .btn,
+nav .btn {
+	padding: 0;
+	border: 0;
+}
+
+nav li {
+	font-size: 11px;
+	font-weight: bold;
+}
+
+.summaries {
+	width: 100%;
+}

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Dashboard sunburst</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css"
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,600">
+    <link rel="stylesheet" type="text/css" href="css/sequences.css"/>
+    <link rel="stylesheet" href="css/rental.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <ul class="nav nav-pills" role="tablist">
+        <li role="presentation" style="float: left;"><a href="#">HOME</a></li>
+        <li role="presentation" style="float: right;"><a href="#">Abe Lincoln <span class="badge">16</span></a></li>
+        <!-- <form class="navbar-form" role="search" style="float: right;">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Search">
+          </div>
+        </form> -->
+      </ul>
+    </nav>
+      <div class="container">
+        <div class="littleFeller">
+              <h3>Dashboard</h3>
+            </div>
+          <div class="row">
+            <div class="charter col-xs-12 col-md-12 col-lg-7">
+              <div id="main">
+                <div id="sequence"></div>
+                <div id="chart">
+                  <div id="explanation" style="visibility: hidden;">
+                    <span id="percentage"></span><br/>
+                    of rental cars are currently in [state].
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="nationalTable col-xs-12 col-md-12 col-lg-5">
+              <div id="sequence">
+                <div class="btn-group summaries" role="group" aria-label="Default button group">
+                  <button type="button" class="btn btn-default active">Unit Summary</button>
+                  <button type="button" class="btn btn-default">Data Summary</button>
+                  <button type="button" class="btn btn-default">Location Summary</button>
+                </div>
+              </div>
+                    <table class="table table-hover">
+                      <thead>
+                        <tr>  
+                          <th>#</th>
+                          <th>
+                            <div class="btn-group" role="group">
+                              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                State
+                                <span class="caret"></span>
+                              </button>
+                              <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">Region</a></li>
+                                <li><a href="#">Greater Region</a></li>
+                              </ul>
+                            </div>
+                          </th>
+                          <th>
+                            <div class="btn-group" role="group">
+                              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                Total Inventory 
+                                <span class="caret"></span>
+                              </button>
+                              <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">Available Inventory</a></li>
+                                <li><a href="#">Unavailable Inventory</a></li>
+                                <li role="presentation" class="divider"></li>
+                                <li><a href="#">Rented Inventory</a></li>
+                                <li><a href="#">Reserved Inventory</a></li>
+                                <li><a href="#">Broken Inventory</a></li>
+                              </ul>
+                            </div>
+                          </th>
+                          <th>
+                            <div class="btn-group" role="group">
+                              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                National Inventory
+                                <span class="caret"></span>
+                              </button>
+                              <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">State Inventory</a></li>
+                                <li><a href="#">Regional Inventory</a></li>
+                              </ul>
+                            </div>
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th>1</th>
+                          <th>California</th>
+                          <th>3833</th>
+                          <th>12.1%</th>
+                        </tr>
+                        <tr>
+                          <th>2</th>
+                          <th>Texas</th>
+                          <th>2644</th>
+                          <th>8.37%</th>
+                        </tr>
+                        <tr>
+                          <th>3</th>
+                          <th>New York</th>
+                          <th>1965</th>
+                          <th>6.22%</th>
+                        </tr>
+                        <tr>
+                          <th>4</th>
+                          <th>Florida</th>
+                          <th>1955</th>
+                          <th>6.19%</th>
+                        </tr>
+                        <tr>
+                          <th>5</th>
+                          <th>Illinois</th>
+                          <th>1288</th>
+                          <th>4.08%</th>
+                        </tr>
+                        <tr>
+                          <th>6</th>
+                          <th>Pennsylvania</th>
+                          <th>1277</th>
+                          <th>4.04%</th>
+                        </tr>
+                        <tr>
+                          <th>7</th>
+                          <th>Ohio</th>
+                          <th>1157</th>
+                          <th>3.66%</th>
+                        </tr>
+                        <tr>
+                          <th>8</th>
+                          <th>Georgia</th>
+                          <th>999</th>
+                          <th>3.16%</th>
+                        </tr>
+                        <tr>
+                          <th>9</th>
+                          <th>Michigan</th>
+                          <th>989</th>
+                          <th>3.13%</th>
+                        </tr>
+                        <tr class="nc">
+                          <th>10</th>
+                          <th>North Carolina</th>
+                          <th>984</th>
+                          <th>3.11%</th>
+                        </tr>
+                      </tbody>
+                    </table>
+              </div>
+            </div>
+        <!-- <div id="sidebar">
+          <input type="checkbox" id="togglelegend"> Legend<br/>
+          <div id="legend" style="visibility: hidden;"></div>
+        </div> -->
+      </div>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="js/colorbrewer.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/sequences.js"></script>
+    // <script>
+    //     $(function() {
+    //       $('tr').mouseover(function() {
+    //         var data = $.csv.toObjects(csv):
+            
+    //       });
+    //     })
+
+    // </script>
+    <script type="text/javascript">
+      // Hack to make this example display correctly in an iframe on bl.ocks.org
+      d3.select(self.frameElement).style("height", "700px");
+  </script> 
+  </body>
+</html>
